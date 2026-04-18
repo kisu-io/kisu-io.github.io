@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CUR8 Business Plan - Analysis & Recommendations</title>
+    <meta name="description" content="CUR8 Hybrid Cafe-Bar-Sound Lab Business Plan Analysis for 49 Phó Đức Chính, District 1, HCMC">
+    <meta property="og:title" content="CUR8 Business Plan Analysis">
+    <meta property="og:description" content="Comprehensive analysis and recommendations for CUR8 - Hybrid Cafe-Bar-Sound Lab">
+    <meta property="og:type" content="article">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #FF6B35;
+            --primary-dark: #E55A2B;
+            --secondary: #1A1A2E;
+            --accent: #16213E;
+            --bg-dark: #0F0F23;
+            --bg-card: #1A1A2E;
+            --text-primary: #FFFFFF;
+            --text-secondary: #B8B8D1;
+            --text-muted: #6B6B8D;
+            --success: #4ADE80;
+            --warning: #FBBF24;
+            --danger: #EF4444;
+            --border: #2D2D44;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--primary) 0%, #FF8F6B 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        header .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        header .meta {
+            margin-top: 1rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--bg-card);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+
+        nav a:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Sections */
+        section {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 1px solid var(--border);
+        }
+
+        section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        section h2 i {
+            color: var(--primary);
+        }
+
+        /* Status Cards */
+        .status-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .status-card {
+            background: var(--bg-dark);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .status-card h3 {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .status-card .value {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .status-card.complete { border-left: 4px solid var(--success); }
+        .status-card.partial { border-left: 4px solid var(--warning); }
+        .status-card.critical { border-left: 4px solid var(--danger); }
+
+        .status-card .value.complete { color: var(--success); }
+        .status-card .value.partial { color: var(--warning); }
+        .status-card .value.critical { color: var(--danger); }
+
+        /* Progress Bar */
+        .progress-bar {
+            height: 8px;
+            background: var(--border);
+            border-radius: 4px;
+            margin-top: 0.75rem;
+            overflow: hidden;
+        }
+
+        .progress-bar .fill {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+
+        .progress-bar .fill.complete { background: var(--success); }
+        .progress-bar .fill.partial { background: var(--warning); }
+        .progress-bar .fill.critical { background: var(--danger); }
+
+        /* Tables */
+        .table-container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            background: var(--accent);
+            color: var(--text-secondary);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.5px;
+        }
+
+        tr:hover {
+            background: rgba(255, 107, 53, 0.05);
+        }
+
+        /* Checklist */
+        .checklist {
+            list-style: none;
+        }
+
+        .checklist li {
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .checklist li::before {
+            content: '□';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-size: 1.25rem;
+        }
+
+        .checklist li.checked::before {
+            content: '☑';
+            color: var(--success);
+        }
+
+        /* Priority Tags */
+        .tag {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .tag.critical { background: rgba(239, 68, 68, 0.2); color: var(--danger); }
+        .tag.high { background: rgba(255, 107, 53, 0.2); color: var(--primary); }
+        .tag.medium { background: rgba(251, 191, 36, 0.2); color: var(--warning); }
+
+        /* Action Items Grid */
+        .action-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .action-card {
+            background: var(--bg-dark);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .action-card.week1 { border-top: 4px solid var(--danger); }
+        .action-card.week2 { border-top: 4px solid var(--primary); }
+        .action-card.week3 { border-top: 4px solid var(--success); }
+
+        .action-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .action-card ul {
+            list-style: none;
+        }
+
+        .action-card li {
+            padding: 0.5rem 0;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .action-card li::before {
+            content: '→';
+            color: var(--primary);
+            margin-right: 0.5rem;
+        }
+
+        /* Team Grid */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .team-card {
+            background: var(--bg-dark);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid var(--border);
+        }
+
+        .team-card .avatar {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .team-card h4 {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .team-card .role {
+            color: var(--primary);
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .team-card .desc {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+
+        /* Print Styles */
+        @media print {
+            body { background: white; color: black; }
+            nav { display: none; }
+            section { break-inside: avoid; border: 1px solid #ddd; }
+            .status-card, .action-card, .team-card { break-inside: avoid; }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.75rem; }
+            nav ul { justify-content: flex-start; }
+            section { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CUR8 Business Plan</h1>
+        <p class="subtitle">Analysis & Recommendations</p>
+        <p class="meta">April 19, 2026 | 49 Phó Đức Chính, District 1, HCMC</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#status">Status</a></li>
+            <li><a href="#gaps">Critical Gaps</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#economics">Unit Economics</a></li>
+            <li><a href="#actions">Actions</a></li>
+            <li><a href="#risks">Risks</a></li>
+            <li><a href="#team">Team</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- Status Assessment -->
+        <section id="status">
+            <h2><i class="fas fa-chart-pie"></i> Current Status Assessment</h2>
+            <div class="status-grid">
+                <div class="status-card complete">
+                    <h3>Value Proposition</h3>
+                    <div class="value complete">70%</div>
+                    <p style="color: var(--text-muted); margin-top: 0.5rem;">⚠️ Missing pricing & differentiation detail</p>
+                    <div class="progress-bar">
+                        <div class="fill complete" style="width: 70%"></div>
+                    </div>
+                </div>
+                <div class="status-card partial">
+                    <h3>Product Architecture</h3>
+                    <div class="value partial">60%</div>
+                    <p style="color: var(--text-muted); margin-top: 0.5rem;">⚠️ Menu exists but no cost/margin analysis</p>
+                    <div class="progress-bar">
+                        <div class="fill partial" style="width: 60%"></div>
+                    </div>
+                </div>
+                <div class="status-card critical">
+                    <h3>Revenue Model</h3>
+                    <div class="value critical">40%</div>
+                    <p style="color: var(--text-muted); margin-top: 0.5rem;">🔴 Placeholder only - no data yet</p>
+                    <div class="progress-bar">
+                        <div class="fill critical" style="width: 40%"></div>
+                    </div>
+                </div>
+                <div class="status-card critical">
+                    <h3>Unit Economics</h3>
+                    <div class="value critical">30%</div>
+                    <p style="color: var(--text-muted); margin-top: 0.5rem;">🔴 Framework only - no calculations</p>
+                    <div class="progress-bar">
+                        <div class="fill critical" style="width: 30%"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Critical Gaps -->
+        <section id="gaps">
+            <h2><i class="fas fa-exclamation-triangle"></i> Critical Gaps</h2>
+            
+            <h3 style="margin: 1.5rem 0 1rem; color: var(--danger);">1. FINANCIALS - Completely Missing</h3>
+            <ul class="checklist">
+                <li>Startup costs / Capex (estimate: 3.55B VND)</li>
+                <li>Monthly operating costs / Burn rate (estimate: 400-500M VND)</li>
+                <li>Revenue projections Year 1-3 (estimate: 1.3-1.6B/year)</li>
+                <li>Break-even analysis (target: Month 6-8)</li>
+                <li>3-year P&L projection</li>
+                <li>Cash flow forecast</li>
+                <li>Funding requirements</li>
+            </ul>
+
+            <h3 style="margin: 1.5rem 0 1rem; color: var(--danger);">2. PRICING STRATEGY - Not Defined</h3>
+            <ul class="checklist">
+                <li>Cafe menu pricing (coffee: 50-80K, food: 60-120K)</li>
+                <li>Bar menu pricing (cocktails: 150-250K, spirits: 80-150K)</li>
+                <li>Sound Lab ticket pricing (events, private bookings)</li>
+                <li>Average bill targets (day vs night)</li>
+                <li>Margin analysis per category</li>
+            </ul>
+
+            <h3 style="margin: 1.5rem 0 1rem; color: var(--primary);">3. COMPETITIVE ANALYSIS - Partial</h3>
+            <ul class="checklist">
+                <li>Competitor profiles (The Arth, CỘI, Acoustic Bar, Home Pub)</li>
+                <li>Price comparison table</li>
+                <li>Market positioning map</li>
+                <li>Differentiation strategy</li>
+            </ul>
+        </section>
+
+        <!-- Pricing Strategy -->
+        <section id="pricing">
+            <h2><i class="fas fa-tag"></i> Suggested Pricing Strategy</h2>
+            
+            <h3 style="color: var(--primary); margin-bottom: 1rem;">Cafe (Daytime)</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Price Range (VND)</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Coffee</td><td>50,000 - 80,000</td><td>Premium single-origin focus</td></tr>
+                        <tr><td>Tea/Non-coffee</td><td>45,000 - 65,000</td><td>Standard range</td></tr>
+                        <tr><td>Food (light)</td><td>60,000 - 120,000</td><td>Small plates, eggdrops, sandwiches</td></tr>
+                        <tr><td>Pastries</td><td>40,000 - 80,000</td><td>Croissants, cookies</td></tr>
+                        <tr style="background: var(--accent);"><td><strong>Average Bill (Day)</strong></td><td><strong>160,000</strong></td><td><strong>Target</strong></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 style="color: var(--primary); margin: 1.5rem 0 1rem;">Bar (Nighttime)</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Price Range (VND)</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Cocktails</td><td>150,000 - 250,000</td><td>Signature cocktails</td></tr>
+                        <tr><td>Spirits (by glass)</td><td>80,000 - 150,000</td><td>Premium selection</td></tr>
+                        <tr><td>Beer</td><td>40,000 - 80,000</td><td>Local + imported</td></tr>
+                        <tr><td>Wine (by glass)</td><td>120,000 - 200,000</td><td>White space opportunity</td></tr>
+                        <tr style="background: var(--accent);"><td><strong>Average Bill (Night)</strong></td><td><strong>350,000</strong></td><td><strong>Target</strong></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 style="color: var(--primary); margin: 1.5rem 0 1rem;">Sound Lab (Events)</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Price Range (VND)</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Jazz Nights</td><td>100,000 - 200,000</td><td>Ticket + F&B minimum</td></tr>
+                        <tr><td>DJ Nights</td><td>150,000 - 300,000</td><td>Premium events</td></tr>
+                        <tr><td>Private Bookings</td><td>5,000,000 - 15,000,000</td><td>Venue rental</td></tr>
+                        <tr style="background: var(--accent);"><td><strong>Average Event Spend</strong></td><td><strong>500,000</strong></td><td><strong>Per pax target</strong></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Unit Economics -->
+        <section id="economics">
+            <h2><i class="fas fa-calculator"></i> Unit Economics Framework</h2>
+            
+            <h3 style="color: var(--text-secondary); margin-bottom: 1rem;">Daily Revenue Calculation</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Time Slot</th>
+                            <th>Capacity</th>
+                            <th>Turnover</th>
+                            <th>Avg Bill</th>
+                            <th>Daily Revenue</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Day (Cafe)</td><td>80 seats</td><td>3x</td><td>160,000</td><td style="color: var(--success); font-weight: 600;">38.4M VND</td></tr>
+                        <tr><td>Night (Bar)</td><td>110 pax</td><td>2x</td><td>350,000</td><td style="color: var(--success); font-weight: 600;">77M VND</td></tr>
+                        <tr><td>Event (Thu-Sat)</td><td>140 pax</td><td>1.5x</td><td>500,000</td><td style="color: var(--success); font-weight: 600;">105M VND</td></tr>
+                        <tr><td>Sunday (Chill)</td><td>90 seats</td><td>2.5x</td><td>200,000</td><td style="color: var(--success); font-weight: 600;">45M VND</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 style="color: var(--text-secondary); margin: 1.5rem 0 1rem;">Monthly Revenue Projection (Conservative)</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Day Type</th>
+                            <th>Days/Month</th>
+                            <th>Daily Revenue</th>
+                            <th>Monthly Revenue</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Chill (Mon-Wed)</td><td>12</td><td>38.4M</td><td style="color: var(--success); font-weight: 600;">461M VND</td></tr>
+                        <tr><td>Event (Thu-Sat)</td><td>12</td><td>105M</td><td style="color: var(--success); font-weight: 600;">1,260M VND</td></tr>
+                        <tr><td>Sunday</td><td>4</td><td>45M</td><td style="color: var(--success); font-weight: 600;">180M VND</td></tr>
+                        <tr style="background: var(--primary);"><td><strong>TOTAL</strong></td><td><strong>28</strong></td><td></td><td style="font-weight: 700;">~1.9B VND</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Priority Actions -->
+        <section id="actions">
+            <h2><i class="fas fa-tasks"></i> Priority Action Items</h2>
+            <div class="action-grid">
+                <div class="action-card week1">
+                    <h4>🔴 WEEK 1 - Critical</h4>
+                    <ul>
+                        <li>Complete financial model (capex + opex)</li>
+                        <li>Define pricing strategy chi tiết</li>
+                        <li>Calculate unit economics</li>
+                        <li>Break-even analysis với nhiều scenarios</li>
+                    </ul>
+                </div>
+                <div class="action-card week2">
+                    <h4>🟡 WEEK 2 - High Priority</h4>
+                    <ul>
+                        <li>Competitive analysis</li>
+                        <li>Market sizing (TAM/SAM/SOM)</li>
+                        <li>Risk assessment & mitigation</li>
+                        <li>Supplier contracts & pricing</li>
+                    </ul>
+                </div>
+                <div class="action-card week3">
+                    <h4>🟢 WEEK 3 - Medium</h4>
+                    <ul>
+                        <li>Detailed SOPs</li>
+                        <li>Tech stack selection</li>
+                        <li>Hiring plan timeline</li>
+                        <li>Marketing budget breakdown</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Metrics -->
+        <section id="metrics">
+            <h2><i class="fas fa-crosshairs"></i> Key Metrics to Define</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Metric</th>
+                            <th>Target</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Daily seat turnover (day)</td><td>3x</td><td><span class="tag critical">Required</span></td></tr>
+                        <tr><td>Daily seat turnover (night)</td><td>2x</td><td><span class="tag critical">Required</span></td></tr>
+                        <tr><td>Average check (day)</td><td>160,000 VND</td><td><span class="tag high">Target Set</span></td></tr>
+                        <tr><td>Average check (night)</td><td>350,000 VND</td><td><span class="tag high">Target Set</span></td></tr>
+                        <tr><td>Labor cost / Revenue</td><td>< 25%</td><td><span class="tag critical">Required</span></td></tr>
+                        <tr><td>COGS / Revenue</td><td>< 30%</td><td><span class="tag critical">Required</span></td></tr>
+                        <tr><td>Break-even month</td><td>Month 6-8</td><td><span class="tag high">Target Set</span></td></tr>
+                        <tr><td>Monthly revenue Y1</td><td>1.3-1.6B VND</td><td><span class="tag high">Target Set</span></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Risk Assessment -->
+        <section id="risks">
+            <h2><i class="fas fa-shield-alt"></i> Risk Assessment</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Risk</th>
+                            <th>Impact</th>
+                            <th>Probability</th>
+                            <th>Mitigation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Event nights underperform</td>
+                            <td style="color: var(--danger);">High</td>
+                            <td style="color: var(--warning);">Medium</td>
+                            <td>Diversify revenue (retail, private events)</td>
+                        </tr>
+                        <tr>
+                            <td>Labor cost overrun</td>
+                            <td style="color: var(--danger);">High</td>
+                            <td style="color: var(--warning);">Medium</td>
+                            <td>Cross-train staff, optimize scheduling</td>
+                        </tr>
+                        <tr>
+                            <td>Kitchen capacity constraints</td>
+                            <td style="color: var(--warning);">Medium</td>
+                            <td style="color: var(--success);">Low</td>
+                            <td>Focus on drinks + small plates only</td>
+                        </tr>
+                        <tr>
+                            <td>T2 outdoor (now covered)</td>
+                            <td style="color: var(--warning);">Medium</td>
+                            <td style="color: var(--success);">Low</td>
+                            <td>Mái che installed - no concern</td>
+                        </tr>
+                        <tr>
+                            <td>New competitors enter PDC area</td>
+                            <td style="color: var(--warning);">Medium</td>
+                            <td style="color: var(--warning);">Medium</td>
+                            <td>Build brand loyalty, unique programming</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Team -->
+        <section id="team">
+            <h2><i class="fas fa-users"></i> Team Structure</h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="avatar">KT</div>
+                    <h4>Kelly Tú</h4>
+                    <p class="role">Finance & Strategy</p>
+                    <p class="desc">Financial modeling, projections, investor relations</p>
+                </div>
+                <div class="team-card">
+                    <div class="avatar">VT</div>
+                    <h4>Vũ Trần</h4>
+                    <p class="role">Operations & Music</p>
+                    <p class="desc">Music direction, vibe curation, event programming</p>
+                </div>
+                <div class="team-card">
+                    <div class="avatar">KZ</div>
+                    <h4>Keezhu</h4>
+                    <p class="role">Marketing & Tech</p>
+                    <p class="desc">Brand strategy, digital marketing, tech infrastructure</p>
+                </div>
+                <div class="team-card">
+                    <div class="avatar">AN</div>
+                    <h4>Ánh</h4>
+                    <p class="role">Product & F&B</p>
+                    <p class="desc">Menu development, sourcing, operations</p>
+                </div>
+                <div class="team-card">
+                    <div class="avatar">BH</div>
+                    <h4>Bách</h4>
+                    <p class="role">Strategy</p>
+                    <p class="desc">Business development, partnerships</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bottom Line -->
+        <section id="summary">
+            <h2><i class="fas fa-check-circle"></i> Bottom Line</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                <div>
+                    <h3 style="color: var(--success); margin-bottom: 1rem;">Strengths</h3>
+                    <ul style="color: var(--text-secondary);">
+                        <li>Concept rõ ràng, differentiation tốt</li>
+                        <li>Team đủ function</li>
+                        <li>Location premium (Phó Đức Chính)</li>
+                        <li>Multi-revenue stream (cafe + bar + events)</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="color: var(--danger); margin-bottom: 1rem;">Weaknesses</h3>
+                    <ul style="color: var(--text-secondary);">
+                        <li>Thiếu số liệu tài chính - Priority #1</li>
+                        <li>Unit economics chưa detailed</li>
+                        <li>Risk assessment chưa complete</li>
+                        <li>Competitor analysis incomplete</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="margin-top: 2rem; padding: 1.5rem; background: var(--bg-dark); border-radius: 12px; border-left: 4px solid var(--primary);">
+                <h3 style="color: var(--primary);">Next Steps</h3>
+                <ol style="color: var(--text-secondary); margin-top: 1rem; margin-left: 1.5rem;">
+                    <li>Điền financial projections vào model</li>
+                    <li>Chi tiết hóa unit economics</li>
+                    <li>Complete competitive analysis</li>
+                    <li>Finalize pricing strategy</li>
+                </ol>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>Document generated by Oculus AI | April 19, 2026</p>
+        <p style="margin-top: 0.5rem;"><a href="https://kisui-io.github.io/cur8-business-plan.html" style="color: var(--primary);">View Online</a></p>
+    </footer>
+</body>
+</html>
